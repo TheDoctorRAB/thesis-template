@@ -1,0 +1,21 @@
+
+\begin{tikzpicture}
+    
+    %Sum
+    \draw[->] (-3,0) node[anchor=east]{$SP(s)$}-- (-2,0);
+    \draw (-1.75,0) circle (0.25)node{\scriptsize$-$};
+    %Controller
+    \draw[->] (-1.5,0) -- (-0.5,0)node[pos=0.5,anchor=south]{$e(s)$};
+    \draw (-0.5,-0.5) rectangle (0.5,0.5) node[pos=0.5]{$C(s)$};
+    \draw[->] (0.5,0) -- (1.5,0) node[pos=0.5,anchor=south]{$u(s)$};
+    %Actuator
+    \draw (1.5,-0.5) rectangle (2.5,0.5) node[pos=0.5]{$A(s)$};
+    \draw[->] (2.5,0) -- (3.5,0);
+    %Process
+    \draw (3.5,-0.5) rectangle (4.5,0.5) node[pos=0.5]{$P(s)$};
+    \draw[->] (4.5,0) -- (6.5,0) node[anchor=west]{$PV(s)$};
+    %Transducer
+    \draw[->] (5.5,0) -- (5.5,-1.5) -- (2.5,-1.5);
+    \draw (1.5,-2) rectangle (2.5,-1) node[pos=0.5]{$H(s)$} ;
+    \draw[->] (1.5,-1.5) -- (-1.75,-1.5) -- (-1.75,-0.25);
+\end{tikzpicture}

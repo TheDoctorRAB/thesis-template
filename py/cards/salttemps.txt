@@ -1,0 +1,10 @@
+mat Salt0 -3.643499 tmp 873 rgb 197 0 0
+mat Salt1 -3.628150 tmp 889.66 rgb 204 0 0
+mat Salt2 -3.620470 tmp 897.99 rgb 217 0 0
+mat Salt3 -3.612788 tmp 906.32 rgb 230 0 0
+mat Salt4 -3.605102 tmp 914.65 rgb 242 0 0
+mat Salt5 -3.597414 tmp 922.98 rgb 255 13 13
+mat Salt6 -3.589722 tmp 931.31 rgb 255 26 26
+mat Salt7 -3.582028 tmp 939.64 rgb 255 39 39
+mat Salt8 -3.574330 tmp 947.97 rgb 255 51 51
+mat Salt9 -3.566629 tmp 956.3 rgb 255 64 64

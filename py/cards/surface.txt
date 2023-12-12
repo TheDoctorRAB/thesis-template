@@ -1,0 +1,92 @@
+%./cards/surface.txt
+% _________________SURFACE CARDS_______________
+%
+% Reactor planes
+surf 10 pz -11 % Bottom
+surf 11 pz -1 % Reactor Vessel base bottom
+surf 12 pz 0 % Reactor Vessel base top
+surf 13 pz 12 % Reflector clad bottom 
+surf 14 pz 13 % Reflector clad top
+surf 15 pz 179 % core/chimney divider
+surf 16 pz 180 % step clad upper
+surf 17 pz 215 % Spoke clad bottom
+surf 18 pz 216 % Spoke clad top
+surf 19 pz 228 % Lid top
+surf 20 pz 231 % Lid top
+%
+% Core Stratification
+surf 21 pz 31.4444 %top of slice 1 
+surf 22 pz 49.8889 %top of slice 2 
+surf 23 pz 69.3333 %top of slice 3 
+surf 24 pz 86.7778 %top of slice 4 
+surf 25 pz 105.2222 %top of slice 5 
+surf 26 pz 123.6667 %top of slice 6 
+surf 27 pz 142.1111 %top of slice 7 
+surf 28 pz 160.5556 %top of slice 8
+%
+% HEX Stratification
+surf 31 pz 184 %top of slice 1 
+surf 32 pz 188 %top of slice 2 
+surf 33 pz 192 %top of slice 3 
+surf 34 pz 196 %top of slice 4 
+surf 35 pz 200 %top of slice 5 
+surf 36 pz 204 %top of slice 6 
+surf 37 pz 208 %top of slice 7 
+surf 38 pz 212 %top of slice 8
+%
+% Reactor cylinders
+surf 40 cyl 0 0 25 % riser inner
+surf 41 cyl 0 0 36.5 % chimney reflector outer 
+surf 42 cyl 0 0 48 % chimney absorber outer
+surf 43 cyl 0 0 49 % absorber liner 
+surf 44 cyl 0 0 66 % safety absorber outer
+surf 45 cyl 0 0 67 % reflector liner 
+surf 46 cyl 0 0 69.5 % RV inner
+surf 47 cyl 0 0 72.5 % RV outer
+surf 48 cyl 0 0 63.5 % reflector outer
+surf 49 cyl 0 0 2.0 % AS center stem
+%
+% Control drum driveshafts
+surf 60 cyl -45.05 0 2.5 % drum drive tube outer 1
+surf 70 cyl -45.05 0 2 % drum drive tube inner 1
+surf 61 cyl -31.8551605 31.8551605 2.5 % drum drive tube outer 2
+surf 71 cyl -31.8551605 31.8551605 2 % drum drive tube inner 2
+surf 62 cyl 0 45.05 2.5 % drum drive tube outer 3
+surf 72 cyl 0 45.05 2 % drum drive tube inner 3
+surf 63 cyl 31.8551605 31.8551605 2.5 % drum drive tube outer 4
+surf 73 cyl 31.8551605 31.8551605 2 % drum drive tube inner 4
+surf 64 cyl 45.05 0 2.5 % drum drive tube outer 5
+surf 74 cyl 45.05 0 2 % drum drive tube inner 5
+surf 65 cyl 31.8551605 -31.8551605 2.5 % drum drive tube outer 6
+surf 75 cyl 31.8551605 -31.8551605 2 % drum drive tube inner 6
+surf 66 cyl 0 -45.05 2.5 % drum drive tube outer 7
+surf 76 cyl 0 -45.05 2 % drum drive tube inner 7
+surf 67 cyl -31.8551605 -31.8551605 2.5 % drum drive tube outer 8
+surf 77 cyl -31.8551605 -31.8551605 2 % drum drive tube inner 8
+%
+WRITE_PADS %This line tells the python code to write the pads
+%
+% Control drums, likewise
+surf 90 cyl -45.05 0 17   % drum 1
+surf 91 cyl -31.8551605 31.8551605 17  % drum 2
+surf 92 cyl 0 45.05 17  % drum 3
+surf 93 cyl 31.8551605 31.8551605 17 % drum 4
+surf 94 cyl 45.05 0 17 % drum 5
+surf 95 cyl 31.8551605 -31.8551605 17  % drum 6
+surf 96 cyl 0 -45.05 17 % drum 7
+surf 97 cyl -31.8551605 -31.8551605 17 % drum 8
+%
+% Flow separators
+surf 101 cross 0 0 75.5 3
+surf 102 cross 0 0 75.5 3
+strans 101 0 0 1 0 0 22.5
+strans 102 0 0 1 0 0 -22.5
+%In Core Moderator
+surf 103 cross 0 0 27 1
+surf 104 cross 0 0 27 1
+strans 103 0 0 1 0 0 22.5
+strans 104 0 0 1 0 0 -22.5
+%
+%Extremities
+surf 100 sph 0 0 0 300
+%

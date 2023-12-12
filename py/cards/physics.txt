@@ -1,0 +1,15 @@
+%./cards/physics.txt
+% ______________________Physics cards_____
+set power 1e7 %10MWth
+set pop 1000000 500 100 1
+%dep daystep 1 1 1 1 1
+%set mcvol 10000000
+%set nbuf 10
+%set printm 1 1e-10
+%set inventory "all"
+%set pcc leli 10 10
+set acelib "endfb71r1_p2" "endfb71r1" "jeff31u"
+%set declib "sss_jeff31.dec"
+%set nfylib "sss_jeff31.nfy"
+det EnergyDetector dm Salt4 de EnergyGrid
+ene EnergyGrid 3 500 1e-11 2e1

@@ -1,0 +1,109 @@
+%./cards/cell.txt
+% ________________CELL CARDS____________________
+%
+% Fuel in Inlet, Outlet, and Downcomer
+cell 101 0 Salt0 13 -16 45 -46 101 102 %Fuel in Downcomer
+cell 102 0 Salt0 12 -13 41 -46 101 102 %Fuel in Lower Spoke
+cell 103 0 Salt0 12 -13 -41 % Fuel Lower Plenum
+cell 104 0 Salt9 -18 31 -40 %Fuel in Riser
+cell 105 0 Salt9 18 -19 -40 %Fuel in Upper Plenum
+cell 106 0 Salt9 18 -19 -46 40 101 102 60 61 62 63 64 65 66 67 % Fuel in Upper Spoke
+cell 107 0 Salt0 13 -14 -40 101 102 % Fuel passing thru Lower Orifice Plate
+cell 108 0 Salt9 -31 15 -40 101 102 % Fuel passing thru Lower Orifice Plate
+%
+% Fuel in Core
+cell 111 0 Salt0 14 -21 -40 103 104
+cell 112 0 Salt1 21 -22 -40 103 104
+cell 113 0 Salt2 22 -23 -40 103 104
+cell 114 0 Salt3 23 -24 -40 103 104
+cell 115 0 Salt4 24 -25 -40 103 104
+cell 116 0 Salt5 25 -26 -40 103 104
+cell 117 0 Salt6 26 -27 -40 103 104
+cell 118 0 Salt7 27 -28 -40 103 104
+cell 119 0 Salt8 28 -15 -40 103 104
+%
+%Fuel in HEX
+cell 121 0 Salt1 16 -31 43 -46 101 102 
+cell 122 0 Salt2 31 -32 43 -46 101 102 
+cell 123 0 Salt3 32 -33 43 -46 101 102 
+cell 124 0 Salt4 33 -34 43 -46 101 102 
+cell 125 0 Salt5 34 -35 43 -46 101 102 
+cell 126 0 Salt6 35 -36 43 -46 101 102 
+cell 127 0 Salt7 36 -37 43 -46 101 102 
+cell 128 0 Salt8 37 -38 43 -46 101 102 
+cell 129 0 Salt9 38 -18 43 -46 101 102 
+%
+% Structure
+cell 200 0 SS304 11 -12 -46 % Base
+cell 201 0 SS304 13 -14 -45 40 % Reflector Bottom 
+cell 202 0 SS304 14 -15 44 -45 % Downcomer Pipe
+cell 203 0 SS304 15 -16 42 -45 % Reflector Topper
+cell 204 0 SS304 17 -18 40 -43 60 61 62 63 64 65 66 67 % Chimney Absorber Topper
+cell 205 0 SS304 16 -17 42 -43 % Chimney Absorber Pipe
+cell 206 0 SS304 10 -19 46 -47 % Reactor Vessel Pipe
+cell 207 0 SS304 19 -20 -47 60 61 62 63 64 65 66 67 %Lid
+%
+% Reflector/Absorber
+cell 300 0 BeO 10 -11 -46 % Bottom Reflector
+cell 301 0 BeO 15 -17 40 -41 % Chimney Reflector
+cell 302 0 BeO 14 -15 40 -48 90 91 92 93 94 95 96 97 % Interstitial Reflector
+cell 303 0 GRPH 14 -15 48 -44 % Safety Reflector Outer
+cell 304 0 B4C 15 -17 -42 41 60 61 62 63 64 65 66 67 % Chimney Absorber
+cell 305 0 BeO 14 -15 -40 (-103:-104) %In Core Moderator
+cell 306 0 BeO 15 -31 (-101:-102) -40 %Core Top Orifice Plate
+%
+% Control Drum Reflectors
+cell 401 0 BeO 14 -15 -90 80 60 % drum 1
+cell 402 0 BeO 14 -15 -91 81 61 % drum 2
+cell 403 0 BeO 14 -15 -92 82 62 % drum 3
+cell 404 0 BeO 14 -15 -93 83 63 % drum 4
+cell 405 0 BeO 14 -15 -94 84 64 % drum 5
+cell 406 0 BeO 14 -15 -95 85 65 % drum 6
+cell 407 0 BeO 14 -15 -96 86 66 % drum 7
+cell 408 0 BeO 14 -15 -97 87 67 % drum 8
+%
+% Control Drum Absorbers
+cell 501 0 B4C 14 -15 -80 60 % drum 1
+cell 502 0 B4C 14 -15 -81 61 % drum 2
+cell 503 0 B4C 14 -15 -82 62 % drum 3
+cell 504 0 B4C 14 -15 -83 63 % drum 4
+cell 505 0 B4C 14 -15 -84 64 % drum 5
+cell 506 0 B4C 14 -15 -85 65 % drum 6
+cell 507 0 B4C 14 -15 -86 66 % drum 7
+cell 508 0 B4C 14 -15 -87 67 % drum 8
+%
+% Control Drum Drive Shafts
+cell 601 0 SS304 -60 70 14 -20 % driveshaft tube 1
+cell 602 0 SS304 -61 71 14 -20 % driveshaft tube 2
+cell 603 0 SS304 -62 72 14 -20 % driveshaft tube 3
+cell 604 0 SS304 -63 73 14 -20 % driveshaft tube 4
+cell 605 0 SS304 -64 74 14 -20 % driveshaft tube 5
+cell 606 0 SS304 -65 75 14 -20 % driveshaft tube 6
+cell 607 0 SS304 -66 76 14 -20 % driveshaft tube 7
+cell 608 0 SS304 -67 77 14 -20 % driveshaft tube 8
+cell 701 0 NiCrMo -70 14 -20 % driveshaft tube 1 fill
+cell 702 0 NiCrMo -71 14 -20 % driveshaft tube 2 fill
+cell 703 0 NiCrMo -72 14 -20 % driveshaft tube 3 fill
+cell 704 0 NiCrMo -73 14 -20 % driveshaft tube 4 fill
+cell 705 0 NiCrMo -74 14 -20 % driveshaft tube 5 fill
+cell 706 0 NiCrMo -75 14 -20 % driveshaft tube 6 fill
+cell 707 0 NiCrMo -76 14 -20 % driveshaft tube 7 fill
+cell 708 0 NiCrMo -77 14 -20 % driveshaft tube 8 fill
+%
+% Flow separators
+cell 800 0 SS304 -101 12 -13 41 -46 % lower spoke dividers 1
+cell 801 0 SS304 -102 12 -13 41 -46 % lower spoke dividers 2
+cell 802 0 SS304 -101 13 -16 45 -46 % downcomer surround dividers 1
+cell 803 0 SS304 -102 13 -16 45 -46 % downcomer surround dividers 2
+cell 804 0 SS304 -101 16 -18 43 -46 % heat exchanger dividers 1
+cell 805 0 SS304 -102 16 -18 43 -46 % heat exchanger dividers 2
+cell 806 0 SS304 -101 18 -19 40 -46 % upper spoke dividers 1
+cell 807 0 SS304 -102 18 -19 40 -46 % upper spoke dividers 2
+cell 808 0 BeO (-101:-102) 13 -14 -40 % core bottom orifice plate dividers 1
+%
+% Outside
+cell 900 0 Conc -10 -100 %  below vessel
+cell 901 0 Conc 10 47 -20 -100 %  around vessel
+cell 902 0 Air 20 -100 %  above vessel
+cell 999 0 outside 100 %void
+%

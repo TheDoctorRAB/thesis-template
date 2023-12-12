@@ -1,0 +1,11 @@
+%./cards/plot.txt
+% _________________________Plotter_________
+%
+plot 22 1080 1800 [0 -100 100 -20 320] %Axial
+plot 31 640 640 [6 -100 100 -100 100] %Lower Plenum/Spoke
+plot 31 640 640 [12.5 -100 100 -100 100] %Lower Orifice
+plot 31 1080 1080 [100 -100 100 -100 100] %Core
+plot 31 640 640 [179.5 -100 100 -100 100] %HEX Bottom/Upper Orifice
+plot 31 640 640 [186 -100 100 -100 100] %Heat Exchanger
+plot 31 640 640 [215.5 -100 100 -100 100] %Heat Exchagner Top
+plot 31 640 640 [220 -100 100 -100 100] %Upper Plenum/Spoke

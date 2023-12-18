@@ -225,7 +225,7 @@
 
 \newcommand{\sci}[1][]{$\times$ 10\textsuperscript{#1} }
 
-%Nuclides!
+%Nuclides
 %\newcommand{\<call>}[<mass number (optional)>][default]{$^{#1}A$}
 \newcommand{\F}[1][19]{$^{#1}F$ }
 \newcommand{\Li}[1][]{$^{#1}Li$ }

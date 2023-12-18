@@ -1,17 +1,98 @@
 \chapter{Body}
 \label{Chapter:Body}
 
-paragraph enumerate
+This section demonstrates some of the features of this template, including:
+\begin{enumerate}
+    \item Equations;
+    \item Short-cuts;
+    \item Notes; and
+    \item Objects;
+\end{enumerate}
 
-Equations
-reactions
-Acronyms
-Nuclides
-Footnotes
-Margin Notes
-Citations
-Figures
-Tikz
-PGF
-Tables
-Codes
+These will allow you to:
+\begin{itemize}
+    \item Automatically refer to numbered objects without having to manually cross-reference; and
+    \item Save keystrokes for commonly used sequences;
+\end{itemize}
+
+The template uses the \verb|inline| option on the \verb|enumitem| package which allows inline lists. This can be useful to:
+\begin{enumerate*}
+    \item save space in the document;
+    \item improve the flow of the text; and
+    \item prevent run-on sentences;
+\end{enumerate*}
+
+\section{Equations}
+By default, \LaTeX\ has equations which can be referred to using the \verb|\label| and \verb|\activeref| macros. For example, \ref{eqn:error}.
+
+\begin{equation}\label{eqn:error}
+    e(t) = PV(t) - SP(t)
+\end{equation}
+
+It is common to have both equations and reactions in your work. Thesis.tex provides functionality to distinguish reactions and mathematical equations. See \ref{rxn:delayed}.
+
+\begin{reaction}\label{rxn:delayed}
+    {^{87}Br} \underset{56 sec}{\stackrel{\beta^-}{\longrightarrow}} {^{87}Kr^{*}} \to {^{86}Kr + n}
+\end{reaction}
+
+If you would prefer to not differentiate equations and reactions, you can remove that functionality by removing the lines using \verb|\renewcommand{\theequation}| and \verb|\renewcommand{\thechemequation}|.
+
+\section{Short-cuts}
+\subsection{Acronyms}
+You will likely use acronyms in your thesis. Define your acronyms in uidaho.cls using \verb|\newacronym{tag}{abbreviation}{full-text}|. The first time you use an acronym, use \verb|\acf{tag}| to render the full acronym, as such: \acf{npp}. Afterwards, you can use \verb|\acs{tag}| to only render the abbreviation (\acs{npp}), or \verb|\acl{tag}| to only render the full text (\acl{npp}). For the plural cases, use \verb|\acsp{tag}| or \verb|\aclp{tag}|. Any acronyms that you use will automatically be defined in the List of Acronyms. 
+
+\subsection{Custom Commands}
+If you have repeated text objects that are tedious to type in, \eg $^{135}Xe$, you can use the \verb|\newcommand| command to define a short-cut. uidaho.cls contains quite a few nuclides, as well as some latin phrases, \eg, \ie, \etal, and even scientific notation.
+
+Generally, nuclides take one optional argument. For example, \verb|\Xe| renders \Xe, but \verb|\Xe[136]| renders \Xe[136]. \verb|6.02\sci[23]| will render 6.02\sci[23].
+
+\section{Notes}
+There are two types of notes supported by this template. Footnotes\footnotemark and margin notes\note{margin notes remind you to come back and do something}. Margin notes are set-up in Thesis.tex using \verb|\newcommandx|. You can customize the appearance of the notes and have different types of notes if you wish.
+
+\footnotetext{Footnotes provide additional context to the reader.}
+
+
+\section{Objects}
+By use of the `cleveref' package, you don't need to type out `Figure' or `Table' when referring to your objects. It automatically adds the label if you use \verb|\cref| instead of \verb|\ref| (see \cref{fig:picture}).
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{ANS}
+    \caption[Short version of caption]{Long version of caption. The short version, which is input in square brackets, is displayed in the List of Figures. LaTeX knows to look for graphics in the ./img/ directory because it is specified using the graphicspath command in Thesis.tex.}
+    \label{fig:picture}
+\end{figure}
+
+This template also has support for tikz drawings (\cref{fig:tikz}) and pgf plots (\cref{fig:pgf}).
+
+\begin{figure}[!ht]
+    \centering
+    \input{tikz/feedback}
+    \caption[Feedback control loop]{Feedback control loop. The process-variable ($PV$) is measured by the transducer ($H$) and compared to the set-point ($SP$). The controller ($C$) uses the actuator ($A$) to control the process ($P$) based on the error ($e$).}
+    \label{fig:tikz}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \subfloat[\centering Step-function]{{\resizebox{0.4\textwidth}{!}{\input{tikz/pgf/prefilter_step}}}}
+    \qquad
+    \subfloat[\centering Ramp-function]{\resizebox{0.4\textwidth}{!}{\input{tikz/pgf/prefilter_ramp}}}
+    \caption[Pre-filter on (a) step-function and (b) ramp-function]{Pre-filter on step-function and ramp-function. When the pre-filter acts on a step-function, it follows an exponential curve, reaching 63.2\% of the magnitude of the step in 1 time constant, 86.5\% in 2 time constants, 95.0\% in 3 time constants and so on. The ramp-function exhibits similar but more complicated dynamics due to the changing input.}
+    \label{fig:pgf}
+\end{figure}
+
+Tables require you to use \verb|\Cref| instead of \verb|\cref| (see \Cref{tab:params})
+
+\begin{table}[ht!]
+    \caption[Relevant nuclear constants]{Relevant nuclear constants \cite{Lamarsh}. The \I fission yield ($\gamma$) is the sum of direct and indirect fission. The \I microscopic neutron capture cross-section ($\sigma$) is neglected as it is so small that it is insignificant compared to its own decay rate and the \Xe cross-section.}
+    \centering\begin{tabular}{c|ccc}
+                   &  $\gamma \;(\%)$ &  $\lambda \; (hr^{-1})$ &  $\sigma_a \; (Mb)$ \\ \hline
+        \I  & 6.39            & 0.1035                 & -                \\
+        \Xe & 0.237           & 0.0753                 & 2.65\textsuperscript{*}
+    \end{tabular}\\
+    \textsuperscript{*}At 0.025 eV
+    \label{tab:params}
+\end{table}
+
+The template also has support for Python and Serpent code blocks using the custom `./rcs/slither.sty' package. Codes are included in Appendix \ref{app:codes}.
+
+Finally, LaTeX handles citations for you. Include the data about your citations in ./rcs/References.bib, and cite them here using \verb|\cite|. For example, \cite{RootMS}. If you are citing textbooks and want to include a chapter, put any such information in square brackets \cite[Ch. 6]{Lamarsh}.
